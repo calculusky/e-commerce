@@ -54,7 +54,6 @@ exports.postAddProduct = (req, res, next) => {
             validationErrors: error.array(),
             product: {
                 title: title,
-                imageUrl: imageUrl,
                 price: price,
                 description: description
             }
@@ -193,8 +192,8 @@ exports.getProducts = (req, res, next) => {
         });
 };
 
-exports.postDeleteProduct = (req, res, next) => {
-    const prodId = req.body.productId;
+exports.deleteProduct = (req, res, next) => {
+    const prodId = req.params.productId;
     Product.findOne({ _id: prodId, userId: req.user._id })
         .then(product => {
             console.log(product)
@@ -207,7 +206,7 @@ exports.postDeleteProduct = (req, res, next) => {
         })
         .then(() => {
             console.log('product successfully deleted');
-            res.redirect('/admin/products');
+            res.status(200).json({message: 'operation successful, product deleted'});
         })
         .catch(err => {
             const error = new Error(err); // error.message property holds the argument passed

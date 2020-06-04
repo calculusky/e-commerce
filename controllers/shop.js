@@ -67,7 +67,7 @@ exports.getIndex = (req, res, next) => {
            // console.log(products);
             res.render('shop/index', {
                 prods: products,
-                pageTitle: 'shop', 
+                pageTitle: 'shop',
                 path: '/', 
                 hasNextPage: page * ITEMS_PER_PAGE < totalItems,
                 hasPreviousPage: page > 1,

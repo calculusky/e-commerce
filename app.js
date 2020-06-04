@@ -58,6 +58,7 @@ const authRoute = require('./routes/auth');
 
 //register middlewares
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 app.use(multer({
     storage: fileStorage,
     fileFilter: fileFilter
