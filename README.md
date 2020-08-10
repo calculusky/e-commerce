@@ -1,0 +1,1 @@
+The application is a simple web based e-commerce demo app where users can create account and upload files(products) describing their products.This would be purchased by other users that find the product interesting. The system generates invoice for the purchased products. Authentication, validation and authorization are well implemented. The app is still under development.
